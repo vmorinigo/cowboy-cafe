@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+  * Author: Valeria Morinigo
+  * Class: Abstract class Entree
+  * Purpose: A base class representing a entree
+  */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
