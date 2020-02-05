@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Valeria Morinigo
+ * Class: BakedBeans
+ * Purpose: A class representing the BakedBeans
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,13 +1,16 @@
-﻿using System;
+﻿/*
+     * Author: Valeria Morinigo
+     * Class: TrailBurger
+     * Purpose: A class representing the TrailBurger
+     */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    /// <summary>
-    /// A class representing the Trail Burger entree
-    /// </summary>
-    public class TrailBurger
+    
+    public class TrailBurger : Entree
     {
 
         private bool cheese = true;
@@ -63,7 +66,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -74,7 +77,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -85,7 +88,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

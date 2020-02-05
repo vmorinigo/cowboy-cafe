@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Valeria Morinigo
+ * Class: ChiliCheeseFries
+ * Purpose: A class representing the ChiliCheeseFries
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

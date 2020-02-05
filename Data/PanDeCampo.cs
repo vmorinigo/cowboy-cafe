@@ -1,9 +1,15 @@
-﻿using System;
+﻿/*
+   * Author: Valeria Morinigo
+   * Class: PanDeCampo
+   * Purpose: A class representing the PanDeCampo
+   */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+   
     public class PanDeCampo : Side
     {
         public override uint Calories

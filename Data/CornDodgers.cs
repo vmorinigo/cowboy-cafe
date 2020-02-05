@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+  * Author: Valeria Morinigo
+  * Class: CornDodgers
+  * Purpose: A class representing the CornDodgers
+  */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,7 +20,7 @@ namespace CowboyCafe.Data
                     case Size.Small:
                         return 512;
                     case Size.Medium:
-                        return 658;
+                        return 685;
                     case Size.Large:
                         return 717;
                     default:
