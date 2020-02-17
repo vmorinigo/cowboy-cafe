@@ -4,9 +4,18 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class Water : Drink
     {
-        public SodaFlavor Flavor { get; set;}
+        private bool lemon = false;
+        /// <summary>
+        /// If the water has lemons
+        /// </summary>
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; }
+        }
+
         public override uint Calories
         {
             get
@@ -14,11 +23,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 110;
+                        return 0;
                     case Size.Medium:
-                        return 146;
+                        return 0;
                     case Size.Large:
-                        return 198;
+                        return 0;
                     default:
                         throw new NotImplementedException();
                 }
@@ -31,25 +40,29 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.59;
+                        return 0.12;
                     case Size.Medium:
-                        return 2.10;
+                        return 0.12;
                     case Size.Large:
-                        return 2.59;
+                        return 0.12;
                     default:
                         throw new NotImplementedException();
                 }
             }
         }
+        /// <summary>
+        /// Special instructions for the preparation of the chicken
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
             {
-                var ingredients = new List<string>();
+                var instructions = new List<string>();
 
-                if (!Ice) ingredients.Add("hold ice");
+                if (!Ice) instructions.Add("hold ice");
+                if (lemon) instructions.Add("add lemon");
 
-                return ingredients;
+                return instructions;
             }
         }
     }
