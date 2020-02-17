@@ -23,13 +23,13 @@
         
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Entrees</TextBlock>
-            <Button x:Name="AddTexasTripleBurger" Content="Texas Triple Burger" Margin="0,10,0,20"/>
-            <Button x:Name="AddDakotaDoubleBurger" Content="Dakota Double Burger" Margin="0,0,0,20" />
-            <Button x:Name="AddTrailBurger" Content="Trail Burger" Margin="0,0,0,20" />
-            <Button x:Name="AddPecosPulledPork" Content="Pecos Pulled Pork" Margin="0,0,0,20" />
-            <Button x:Name="AddRustlersRibs" Content="Rustler's Ribs" Margin="0,0,0,20" />
-            <Button x:Name="AddCowpokeChili" Content="Cowpoke Chili" Margin="0,0,0,20" />
-            <Button x:Name="AddAngryChicken" Content="Angry Chicken" Margin="0,0,0,20" />
+            <Button x:Name="AddTexasTripleBurger" Content="Texas Triple Burger" Margin="0,10,0,20" Click="AddTexasTripleBurger_Click"/>
+            <Button x:Name="AddDakotaDoubleBurger" Content="Dakota Double Burger" Margin="0,0,0,20" Click="AddDakotaDoubleBurger_Click" />
+            <Button x:Name="AddTrailBurger" Content="Trail Burger" Margin="0,0,0,20" Click="AddTrailBurger_Click" />
+            <Button x:Name="AddPecosPulledPork" Content="Pecos Pulled Pork" Margin="0,0,0,20" Click="AddPecosPulledPork_Click" />
+            <Button x:Name="AddRustlersRibs" Content="Rustler's Ribs" Margin="0,0,0,20" Click="AddRustlersRibs_Click" />
+            <Button x:Name="AddCowpokeChili" Content="Cowpoke Chili" Margin="0,0,0,20" Click="AddCowpokeChili_Click" />
+            <Button x:Name="AddAngryChicken" Content="Angry Chicken" Margin="0,0,0,20" Click="AddAngryChicken_Click" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
@@ -48,7 +48,7 @@
             <Button x:Name="AddWater" Content="Water" Margin="0,0,0,20"/>
         </StackPanel>
 
-        <StackPanel  Grid.Row="1" Grid.Column="3">
+        <StackPanel x:Name="Order_List"  Grid.Row="1" Grid.Column="3">
             <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Order</TextBlock>
             <ListView x:Name="Order" Margin="0,10,0,0">
                 <ListView.View>

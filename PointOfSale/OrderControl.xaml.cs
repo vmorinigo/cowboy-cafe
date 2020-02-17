@@ -22,5 +22,40 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
+
+        private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Items.Add("Texas Triple Burger");
+        }
     }
 }
