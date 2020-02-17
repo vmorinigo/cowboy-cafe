@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+   * Author: Valeria Morinigo
+   * Class: TexasTea
+   * Purpose: A class representing the TexasTea
+   */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

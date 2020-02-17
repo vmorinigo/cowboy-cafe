@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+   * Author: Valeria Morinigo
+   * Class: Water
+   * Purpose: A class representing the water
+   */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

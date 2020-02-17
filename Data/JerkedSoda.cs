@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+   * Author: Valeria Morinigo
+   * Class: Jerked Soda
+   * Purpose: A class representing the Jerked Soda
+   */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

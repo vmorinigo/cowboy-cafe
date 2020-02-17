@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+   * Author: Valeria Morinigo
+   * Class: Cowboy Coffee
+   * Purpose: A class representing the CowboyCoffee
+   */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
