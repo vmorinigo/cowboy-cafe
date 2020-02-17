@@ -11,31 +11,15 @@ namespace CowboyCafe.Data
 {
     public class TexasTea : Drink
     {
-        private bool sweet = true;
-        /// <summary>
-        /// If the tea is sweet
-        /// </summary>
-        public bool Sweet
-        {
-            get { return sweet; }
-            set { sweet = value; }
-        }
+        public bool Sweet { get; set; } = true;
 
-        private bool lemon = false;
-        /// <summary>
-        /// If the tea has lemons
-        /// </summary>
-        public bool Lemon
-        {
-            get { return lemon; }
-            set { lemon = value; }
-        }
+        public bool Lemon { get; set; } = false;
 
         public override uint Calories
         {
             get
             {
-                if(!sweet)
+                if(!Sweet)
                 {
                     switch (Size)
                     {
@@ -88,8 +72,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!Ice) instructions.Add("hold ice");
-                if (lemon) instructions.Add("add lemon");
+                if (!Ice) instructions.Add("Hold Ice");
+                if (Lemon) instructions.Add("Add Lemon");
 
                 return instructions;
             }

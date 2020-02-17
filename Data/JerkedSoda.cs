@@ -52,7 +52,7 @@ namespace CowboyCafe.Data
             {
                 var ingredients = new List<string>();
 
-                if (!Ice) ingredients.Add("hold ice");
+                if (!Ice) ingredients.Add("Hold Ice");
 
                 return ingredients;
             }

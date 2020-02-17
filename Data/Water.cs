@@ -11,15 +11,7 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink
     {
-        private bool lemon = false;
-        /// <summary>
-        /// If the water has lemons
-        /// </summary>
-        public bool Lemon
-        {
-            get { return lemon; }
-            set { lemon = value; }
-        }
+        public bool Lemon { get; set; } = false;
 
         public override uint Calories
         {
@@ -64,8 +56,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!Ice) instructions.Add("hold ice");
-                if (lemon) instructions.Add("add lemon");
+                if (!Ice) instructions.Add("Hold Ice");
+                if (Lemon) instructions.Add("Add Lemon");
 
                 return instructions;
             }

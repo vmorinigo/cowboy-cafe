@@ -21,16 +21,10 @@ namespace CowboyCafe.Data
             set { decaf = value; }
         }
 
-        private bool roomForCream = false;
-        /// <summary>
-        /// If the coffee has cream
-        /// </summary>
-        public bool RoomForCream
-        {
-            get { return roomForCream; }
-            set { roomForCream = value; }
-        }
+        public bool RoomForCream { get; set; } = false;
 
+        public new bool Ice { get; set; } = false;
+        
         public override uint Calories
         {
             get
@@ -74,8 +68,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Ice) instructions.Add("add ice");
-                if (roomForCream) instructions.Add("Room For Cream");
+                if (Ice) instructions.Add("Add Ice");
+                if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;
             }
