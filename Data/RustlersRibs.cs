@@ -34,6 +34,11 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string ToString()
+        {
+            return "Rustler's Ribs";
+        }
+
         /// <summary>
         /// No special instructions for the preparation of the ribs
         /// </summary>

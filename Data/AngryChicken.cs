@@ -52,7 +52,10 @@ namespace CowboyCafe.Data
                 return 190;
             }
         }
-
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
         /// <summary>
         /// Special instructions for the preparation of the chicken
         /// </summary>

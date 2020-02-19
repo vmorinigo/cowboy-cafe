@@ -116,6 +116,11 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
+
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>

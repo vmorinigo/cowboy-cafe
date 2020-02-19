@@ -85,6 +85,11 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
+
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>
