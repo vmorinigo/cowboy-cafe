@@ -82,6 +82,12 @@ namespace CowboyCafe.DataTests
         }
 
         [Theory]
+        [InlineData(Size.Small, false, "Small Texas Sweet Tea")]
+        [InlineData(Size.Medium, false, "Small Texas Sweet Tea")]
+        [InlineData(Size.Large, false, "Small Texas Sweet Tea")]
+        [InlineData(Size.Small, true, "Small Texas Plain Tea")]
+        [InlineData(Size.Medium, true, "Medium Texas Plain Tea")]
+        [InlineData(Size.Large, true, "Large Texas Plain Tea")]
         [InlineData(Size.Small, false, "Small Texas Plain Tea")]
         [InlineData(Size.Medium, false, "Medium Texas Plain Tea")]
         [InlineData(Size.Large, false, "Large Texas Plain Tea")]
