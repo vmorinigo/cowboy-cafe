@@ -6,55 +6,19 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="40px"/>
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-    </UserControl.Resources>
+    
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
-        <StackPanel Grid.Row="1" Grid.Column="0">
-            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Entrees</TextBlock>
-            <Button x:Name="AddTexasTripleBurger" Content="Texas Triple Burger" Margin="5,10,5,20" Click="AddTexasTripleBurger_Click"/>
-            <Button x:Name="AddDakotaDoubleBurger" Content="Dakota Double Burger" Margin="5,0,5,20" Click="AddDakotaDoubleBurger_Click" />
-            <Button x:Name="AddTrailBurger" Content="Trail Burger" Margin="5,0,5,20" Click="AddTrailBurger_Click" />
-            <Button x:Name="AddPecosPulledPork" Content="Pecos Pulled Pork" Margin="5,0,5,20" Click="AddPecosPulledPork_Click" />
-            <Button x:Name="AddRustlersRibs" Content="Rustler's Ribs" Margin="5,0,5,20" Click="AddRustlersRibs_Click" />
-            <Button x:Name="AddCowpokeChili" Content="Cowpoke Chili" Margin="5,0,5,20" Click="AddCowpokeChili_Click" />
-            <Button x:Name="AddAngryChicken" Content="Angry Chicken" Margin="5,0,5,20" Click="AddAngryChicken_Click" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Sides</TextBlock>
-            <Button x:Name="AddChiliCheeseFries" Content="Chili Cheese Fries" Margin="5,10,5,20" Click="AddChiliCheeseFries_Click"/>
-            <Button x:Name="AddBakedBeans" Content="Baked Beans" Margin="5,0,5,20" Click="AddBakedBeans_Click" />
-            <Button x:Name="AddPanDeCampo" Content="Pan De Campo" Margin="5,0,5,20" Click="AddPanDeCampo_Click" />
-            <Button x:Name="AddCornDogs" Content="Corn Dogs" Margin="5,0,5,20" Click="AddCornDogs_Click" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="2">
-            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Drinks</TextBlock>
-            <Button x:Name="AddJerkedSoda" Content="Jerked Soda" Margin="5,10,5,20" Click="AddJerkedSoda_Click"/>
-            <Button x:Name="AddTexasTea" Content="Texas Tea" Margin="5,0,5,20" Click="AddTexasTea_Click"/>
-            <Button x:Name="AddCowboyCafe" Content="Cowboy Cafe" Margin="5,0,6,20" Click="AddCowboyCafe_Click"/>
-            <Button x:Name="AddWater" Content="Water" Margin="5,0,5,20" Click="AddWater_Click"/>
-        </StackPanel>
-
-        <StackPanel x:Name="Order_List"  Grid.Row="1" Grid.Column="3">
-            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Order</TextBlock>
-            <ListView x:Name="Order" Margin="10,10,10,0">
-                
-            </ListView>
-            <Button x:Name="Clear" Content="Clear" Click="Clear_Click" Margin="50,50,50,51" />
-        </StackPanel>
-
+        <Button />
+        <DockPanel Grid.Column="0" Margin="10,10,10,10">
+            <Button Content="Item Selection" DockPanel.Dock="Top" Margin="10,10,10,10" />
+            <Button Content="Cancel Order" DockPanel.Dock="Top" Margin="10,10,10,10" />
+            <Button Content="Complete Order" DockPanel.Dock="Top" Margin="10,10,10,10" />
+            <local:MenuItemSelectionControl DockPanel.Dock="Bottom"/>
+        </DockPanel>
+        <local:OrderSummaryControl Grid.Column="1" Grid.Row="1" Margin="10,10,10,10"/>
     </Grid>
 </UserControl>
