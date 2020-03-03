@@ -29,7 +29,11 @@ namespace PointOfSale
             {
                 if (sender is Button button)
                 {
-                    order.Remove(button.DataContext.ToString());
+                    if(button.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                    
                 }
 
             }

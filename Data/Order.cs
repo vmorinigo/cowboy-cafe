@@ -33,9 +33,5 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
-        public void Remove(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
