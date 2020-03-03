@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //private uint lastOrderNumber;
+        private uint lastOrderNumber;
 
         private List<IOrderItem> items = new List<IOrderItem>();
         
