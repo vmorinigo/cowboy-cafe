@@ -23,6 +23,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Removes the item from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

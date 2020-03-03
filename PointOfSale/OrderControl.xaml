@@ -19,8 +19,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Content="Item Selection" />
-                <Button Grid.Column="1" Content="Cancel Order"/>
-                <Button Grid.Column="2" Content="Complete Order"/>
+                <Button Content="Cancel Order" Grid.ColumnSpan="3" Height="20" Margin="133,0,133,0" VerticalAlignment="Bottom" Click="Cancel_Click"/>
+                <Button Grid.Column="2" Content="Complete Order" Click="Complete_Click"/>
             </Grid>
             <local:MenuItemSelectionControl DockPanel.Dock="Bottom" Margin="0,0,0,35"/>
         </DockPanel>

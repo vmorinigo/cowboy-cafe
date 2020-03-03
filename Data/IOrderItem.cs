@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+  * Author: Valeria Morinigo
+  * Interface: IOrderItem
+  * Purpose: Represents a single item of an order
+  */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
