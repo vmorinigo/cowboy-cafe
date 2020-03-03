@@ -19,20 +19,19 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        Order order = new Order();
+        
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            this.DataContext = order;
+            
         }
-
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
                 order.Add(new TexasTripleBurger());
             }
-            
+
         }
 
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)

@@ -22,6 +22,8 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+            Order order = new Order();
+            this.DataContext = order;
         }
 
     }

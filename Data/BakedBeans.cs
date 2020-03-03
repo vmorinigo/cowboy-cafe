@@ -45,6 +45,7 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        public override List<string> SpecialInstructions { get; }
         public override string ToString()
         {
             switch (Size)
@@ -59,5 +60,7 @@ namespace CowboyCafe.Data
                     throw new NotImplementedException();
             }
         }
+
+
     }
 }

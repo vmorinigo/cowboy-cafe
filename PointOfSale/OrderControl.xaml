@@ -4,21 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    
+             mc:Ignorable="d" d:DesignWidth="800" Height="500">
+
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button />
-        <DockPanel Grid.Column="0" Margin="10,10,10,10">
-            <Button Content="Item Selection" DockPanel.Dock="Top" Margin="10,10,10,10" />
-            <Button Content="Cancel Order" DockPanel.Dock="Top" Margin="10,10,10,10" />
-            <Button Content="Complete Order" DockPanel.Dock="Top" Margin="10,10,10,10" />
-            <local:MenuItemSelectionControl DockPanel.Dock="Bottom"/>
+        <DockPanel Grid.Column="0">
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Item Selection" />
+                <Button Grid.Column="1" Content="Cancel Order"/>
+                <Button Grid.Column="2" Content="Complete Order"/>
+            </Grid>
+            <local:MenuItemSelectionControl DockPanel.Dock="Bottom" Margin="0,0,0,35"/>
         </DockPanel>
-        <local:OrderSummaryControl Grid.Column="1" Grid.Row="1" Margin="10,10,10,10"/>
+        <local:OrderSummaryControl Grid.Column="1" Margin="0,0,0,50"/>
     </Grid>
 </UserControl>
