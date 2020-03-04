@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -19,42 +20,82 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        
+        private OrderControl orderControl;
         public MenuItemSelectionControl()
         {
             InitializeComponent();
             
         }
-        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
+
+        /*public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>(); 
+
             if (DataContext is Order order)
             {
-                order.Add(new TexasTripleBurger());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "TexasTripleBurger":
+                            order.Add(new TexasTripleBurger());
+                            orderControl.SwapScreen(new CustomizeTexasTripleBurger());
+                            break;
+
+                    }
+                }
+            }
+        }*/
+        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
+        {
+            orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                var entree = new TexasTripleBurger();
+                var screen = new CustomizeTexasTripleBurger();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
 
         }
 
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new DakotaDoubleBurger());
+                var entree = new DakotaDoubleBurger();
+                var screen = new CustomizeDakotaDoubleBurger();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new TrailBurger());
+                var entree = new TrailBurger();
+                var screen = new CustomizeTrailBurger();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new PecosPulledPork());
+                var entree = new PecosPulledPork();
+                var screen = new CustomizePecosPulledPork();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 

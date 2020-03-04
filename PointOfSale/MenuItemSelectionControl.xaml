@@ -21,7 +21,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Entrees</TextBlock>
-            <Button x:Name="AddTexasTripleBurger" Content="Texas Triple Burger" Margin="5,10,5,20" Click="AddTexasTripleBurger_Click"/>
+            <Button x:Name="AddTexasTripleBurger" Content="Texas Triple Burger" Margin="5,10,5,20" Click="AddTexasTripleBurger_Click" Tag="TexasTripleBurger"/>
             <Button x:Name="AddDakotaDoubleBurger" Content="Dakota Double Burger" Margin="5,0,5,20" Click="AddDakotaDoubleBurger_Click" />
             <Button x:Name="AddTrailBurger" Content="Trail Burger" Margin="5,0,5,20" Click="AddTrailBurger_Click" />
             <Button x:Name="AddPecosPulledPork" Content="Pecos Pulled Pork" Margin="5,0,5,20" Click="AddPecosPulledPork_Click" />

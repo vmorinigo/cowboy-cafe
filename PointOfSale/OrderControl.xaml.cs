@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -42,6 +43,17 @@ namespace PointOfSale
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+        }
+
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+
+        }
+
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {
+            SwapScreen(new MenuItemSelectionControl());
         }
     }
 }
