@@ -13,18 +13,18 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <CheckBox IsChecked="{Binding Path=Bun}" Content="Bun" Margin="10,10,10,10"/>
-            <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese" Margin="10,10,10,10"/>
+            <CheckBox IsChecked="{Binding Path=Bun}" Content="Bun" Margin="10,10,10,10" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese" Margin="10,10,10,10" FontSize="20"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Pickle}" Content="Pickle" Margin="10,10,10,10"/>
-            <CheckBox IsChecked="{Binding Path=Tomato}" Content="Tomato" Margin="10,10,10,10"/>
-            <CheckBox IsChecked="{Binding Path=Lettuce}" Content="Lettuce" Margin="10,10,10,10"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Content="Pickle" Margin="10,10,10,10" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Path=Tomato}" Content="Tomato" Margin="10,10,10,10" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Path=Lettuce}" Content="Lettuce" Margin="10,10,10,10" FontSize="20"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
-            <CheckBox IsChecked="{Binding Path=Ketchup}" Content="Ketchup" Margin="10,10,10,10"/>
-            <CheckBox IsChecked="{Binding Path=Mustard}" Content="Mustard" Margin="10,10,10,10"/>
-            <CheckBox IsChecked="{Binding Path=Mayo}" Content="Mayo" Margin="10,10,10,10"/>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" Content="Ketchup" Margin="10,10,10,10" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Path=Mustard}" Content="Mustard" Margin="10,10,10,10" FontSize="20"/>
+            <CheckBox IsChecked="{Binding Path=Mayo}" Content="Mayo" Margin="10,10,10,10" FontSize="20"/>
         </StackPanel>
     </Grid>
 </UserControl>

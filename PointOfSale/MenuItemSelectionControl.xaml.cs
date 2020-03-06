@@ -109,25 +109,40 @@ namespace PointOfSale
 
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new CowpokeChili());
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new AngryChicken());
+                var entree = new AngryChicken();
+                var screen = new CustomizeAngryChicken();
+                screen.DataContext = entree;
+                order.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new ChiliCheeseFries());
+                var side = new ChiliCheeseFries();
+                var screen = new CustomizeChiliCheeseFries();
+                screen.DataContext = side;
+                order.Add(side);
+                orderControl.SwapScreen(screen);
             }
         }
 
@@ -186,5 +201,29 @@ namespace PointOfSale
                 order.Add(new Water());
             }
         }
+
+        /*
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"> The IOrderItem to add </param>
+        /// <param name="screen"> The customization screen (or null for none) </param>
+        void AddItemAndOpenCustomizationScreen (IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("");
+
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("");
+
+
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+
+            order.Add(item);
+        }*/
     }
 }

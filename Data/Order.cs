@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private uint lastOrderNumber;
+        //private uint lastOrderNumber;
 
         private List<IOrderItem> items = new List<IOrderItem>();
         
@@ -29,8 +29,12 @@ namespace CowboyCafe.Data
         /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
+            if(item is INotifyPropertyChanged notifier)
+            {
+                notifier.PropertyChanged += OnItemPropertyChanged;
+            }
+            
             items.Add(item);
-            Subtotal += item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
@@ -40,10 +44,28 @@ namespace CowboyCafe.Data
         /// <param name="item"></param>
         public void Remove(IOrderItem item)
         {
+            if (item is INotifyPropertyChanged notifier)
+            {
+                notifier.PropertyChanged -= OnItemPropertyChanged;
+            }
             items.Remove(item);
-            Subtotal -= item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        /// <summary>
+        /// Helper method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if(e.PropertyName == "Price")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            }
+            
         }
 
     }

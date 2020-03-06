@@ -13,14 +13,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <Button x:Name="Bread" Content="Bread" Margin="5,22,5,20"/>
+            <CheckBox IsChecked="{Binding Path=Bread}" Content="Bread" Margin="10,10,10,10" FontSize="20"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Button x:Name="Pickle" Content="Pickle" Margin="5,20,5,20"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Content="Pickle" Margin="10,10,10,10" FontSize="20"/>
         </StackPanel>
-        <StackPanel Grid.Column="2">
-
-        </StackPanel>
-            
     </Grid>
 </UserControl>
