@@ -27,25 +27,11 @@ namespace PointOfSale
             
         }
 
-        /*public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
-        {
-            orderControl = this.FindAncestor<OrderControl>(); 
-
-            if (DataContext is Order order)
-            {
-                if (sender is Button button)
-                {
-                    switch (button.Tag)
-                    {
-                        case "TexasTripleBurger":
-                            order.Add(new TexasTripleBurger());
-                            orderControl.SwapScreen(new CustomizeTexasTripleBurger());
-                            break;
-
-                    }
-                }
-            }
-        }*/
+        /// <summary>
+        /// This method adds the Texas Triple Burger to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
             orderControl = this.FindAncestor<OrderControl>();
@@ -60,6 +46,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// This method adds the Dakota Double Burger to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             orderControl = this.FindAncestor<OrderControl>();
@@ -73,6 +64,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// This method adds the Trail Burger to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             orderControl = this.FindAncestor<OrderControl>();
@@ -86,6 +82,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// This method adds the Pecos Pulled Pork to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
             orderControl = this.FindAncestor<OrderControl>();
@@ -99,6 +100,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// This method adds the Rustlers Ribs to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -120,6 +126,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// This method adds the Angry Chicken to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
             orderControl = this.FindAncestor<OrderControl>();
@@ -133,40 +144,48 @@ namespace PointOfSale
             }
         }
 
-        private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// This method adds sides to the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addSideToList(object sender, RoutedEventArgs e)
         {
-            orderControl = this.FindAncestor<OrderControl>();
+            //Ensure the DataContext is an Order and not NULL
             if (DataContext is Order order)
             {
-                var side = new ChiliCheeseFries();
-                var screen = new CustomizeChiliCheeseFries();
-                screen.DataContext = side;
-                order.Add(side);
-                orderControl.SwapScreen(screen);
-            }
-        }
+                if (sender is Button)
+                {
+                    IOrderItem item;
+                    FrameworkElement screen = null;
+                    var orderControl = this.FindAncestor<OrderControl>();
 
-        private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new BakedBeans());
-            }
-        }
+                    //Cast sender to button
+                    Button b = (Button)sender;
 
-        private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new PanDeCampo());
-            }
-        }
-
-        private void AddCornDogs_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new CornDodgers());
+                    //Filter which button was pressed based on name
+                    switch (b.Name)
+                    {
+                        case "AddBakedBeans":
+                            item = new BakedBeans();
+                            break;
+                        case "AddChiliCheeseFries":
+                            item = new ChiliCheeseFries();
+                            break;
+                        case "AddCornDogs":
+                            item = new CornDodgers();
+                            break;
+                        case "AddPanDeCampo":
+                            item = new PanDeCampo();
+                            break;
+                        default:
+                            throw new NotImplementedException("Unknown side button clicked");
+                    }
+                    screen = new CustomizeSide(DataContext);
+                    screen.DataContext = item;
+                    order.Add(item);
+                    orderControl.SwapScreen(screen);
+                }
             }
         }
 

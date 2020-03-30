@@ -32,10 +32,10 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Sides</TextBlock>
-            <Button x:Name="AddChiliCheeseFries" Content="Chili Cheese Fries" Margin="5,10,5,20" Click="AddChiliCheeseFries_Click"/>
-            <Button x:Name="AddBakedBeans" Content="Baked Beans" Margin="5,0,5,20" Click="AddBakedBeans_Click" />
-            <Button x:Name="AddPanDeCampo" Content="Pan De Campo" Margin="5,0,5,20" Click="AddPanDeCampo_Click" />
-            <Button x:Name="AddCornDogs" Content="Corn Dogs" Margin="5,0,5,20" Click="AddCornDogs_Click" />
+            <Button x:Name="AddChiliCheeseFries" Content="Chili Cheese Fries" Margin="5,10,5,20" Click="addSideToList"/>
+            <Button x:Name="AddBakedBeans" Content="Baked Beans" Margin="5,0,5,20" Click="addSideToList" />
+            <Button x:Name="AddPanDeCampo" Content="Pan De Campo" Margin="5,0,5,20" Click="addSideToList" />
+            <Button x:Name="AddCornDogs" Content="Corn Dogs" Margin="5,0,5,20" Click="addSideToList" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2">
