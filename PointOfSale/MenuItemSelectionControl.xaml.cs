@@ -191,17 +191,27 @@ namespace PointOfSale
 
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new JerkedSoda());
+                var drink = new JerkedSoda();
+                var screen = new CustomizeJerkedSoda(DataContext);
+                screen.DataContext = drink;
+                order.Add(drink);
+                orderControl.SwapScreen(screen);
             }
         }
 
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var drink = new TexasTea();
+                var screen = new CustomizeTexasTea(DataContext);
+                screen.DataContext = drink;
+                order.Add(drink);
+                orderControl.SwapScreen(screen);
             }
         }
 
@@ -215,34 +225,16 @@ namespace PointOfSale
 
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new Water());
+                var drink = new Water();
+                var screen = new CustomizeWater(DataContext);
+                screen.DataContext = drink;
+                order.Add(drink);
+                orderControl.SwapScreen(screen);
             }
         }
 
-        /*
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"> The IOrderItem to add </param>
-        /// <param name="screen"> The customization screen (or null for none) </param>
-        void AddItemAndOpenCustomizationScreen (IOrderItem item, FrameworkElement screen)
-        {
-            var order = DataContext as Order;
-            if (order == null) throw new Exception("");
-
-            if(screen != null)
-            {
-                var orderControl = this.FindAncestor<OrderControl>();
-                if (orderControl == null) throw new Exception("");
-
-
-                screen.DataContext = item;
-                orderControl.SwapScreen(screen);
-            }
-
-            order.Add(item);
-        }*/
     }
 }

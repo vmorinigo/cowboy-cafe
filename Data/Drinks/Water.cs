@@ -11,7 +11,27 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink
     {
-        public bool Lemon { get; set; } = false;
+        private bool lemon = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChanged("Lemon");
+            }
+        }
+
+        private bool ice = true;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+            }
+        }
 
         public override uint Calories
         {

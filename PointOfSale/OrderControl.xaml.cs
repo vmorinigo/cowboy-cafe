@@ -23,7 +23,7 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            Order order = new Order();
+            Order order = new Order(1);
             this.DataContext = order;
         }
         /// <summary>
@@ -33,7 +33,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            Order o = (Order)DataContext;
+            DataContext = new Order(o.OrderNumber + 1);
         }
         /// <summary>
         /// Event handler for the Complete Order Button
@@ -42,7 +43,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            Order o = (Order)DataContext;
+            DataContext = new Order(o.OrderNumber + 1);
         }
 
         public void SwapScreen(UIElement element)

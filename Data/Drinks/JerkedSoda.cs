@@ -11,6 +11,16 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        private bool ice = true;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+            }
+        }
         public SodaFlavor Flavor { get; set;}
         public override uint Calories
         {

@@ -12,7 +12,16 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextAlignment="Center" FontSize="20" FontWeight="Bold">Order #</TextBlock>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" TextAlignment="Center" FontSize="20" FontWeight="Bold">Order #</TextBlock>
+            <TextBlock x:Name="OrderNumberBindingBlock" FontSize="20" FontWeight="Bold" Grid.Column="1" Text="{Binding Path=OrderNumber}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+       
         <ListBox Name ="Order" Grid.Row="1" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>

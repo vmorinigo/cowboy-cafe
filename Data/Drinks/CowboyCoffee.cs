@@ -14,12 +14,39 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the coffee is decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        private bool decaf = true;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Decaf");
+            }
+        }
 
-        public bool RoomForCream { get; set; } = false;
+        private bool roomForCream = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChanged("RoomForCream");
+            }
+        }
 
-        public new bool Ice { get; set; } = false;
-        
+        private bool ice = false;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+            }
+        }
+
         public override uint Calories
         {
             get

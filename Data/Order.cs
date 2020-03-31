@@ -35,6 +35,17 @@ namespace CowboyCafe.Data
         public uint OrderNumber { get; set; }
 
         /// <summary>
+        /// Public constructor that initializes the list
+        /// </summary>
+        /// <param name="i">The current order number</param>
+        public Order(uint i)
+        {
+            items = new List<IOrderItem>();
+            itemPrices = new List<string>();
+            OrderNumber = i;
+        }
+
+        /// <summary>
         /// Adds an item to the order list
         /// </summary>
         /// <param name="item"></param>
