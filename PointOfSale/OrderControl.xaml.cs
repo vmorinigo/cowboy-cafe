@@ -37,6 +37,7 @@ namespace PointOfSale
         {
             Order o = (Order)DataContext;
             DataContext = new Order(o.OrderNumber + 1);
+            Container.Child = new MenuItemSelectionControl();
         }
         /// <summary>
         /// Event handler for the Complete Order Button
@@ -46,7 +47,9 @@ namespace PointOfSale
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
             Order o = (Order)DataContext;
-            DataContext = new Order(o.OrderNumber + 1);
+            //o.Total = o.Subtotal * 0.16;
+            //DataContext = new Order(o.OrderNumber + 1);
+            Container.Child = new TransactionControl();
         }
 
         private void ItemSelection_Click(object sender, RoutedEventArgs e)

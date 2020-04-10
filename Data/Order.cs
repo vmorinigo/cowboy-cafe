@@ -32,6 +32,8 @@ namespace CowboyCafe.Data
 
         public double Subtotal { get; set; }
 
+        public double Total => (Subtotal * 0.16) + Subtotal;
+
         public uint OrderNumber { get; set; }
 
         /// <summary>
@@ -105,8 +107,8 @@ namespace CowboyCafe.Data
 
         public void InvokePropertyChanged()
         {
-            /* Invoke all events to ensure you don't miss anything */
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemPrices"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

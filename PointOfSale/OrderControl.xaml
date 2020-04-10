@@ -14,7 +14,7 @@
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="350"/>
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Column="0">
             <Grid DockPanel.Dock="Top">
@@ -31,7 +31,7 @@
                 <local:MenuItemSelectionControl Margin="0,0,0,30" />
             </Border>
         </DockPanel>
-        <local:OrderSummaryControl Grid.Column="1" Margin="0,0,0,30" />
+        <local:OrderSummaryControl Grid.Column="1" Margin="0,0,0,30" Height="460" />
         
     </Grid>
 </UserControl>
