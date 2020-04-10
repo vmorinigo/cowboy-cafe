@@ -1,4 +1,9 @@
-﻿<UserControl x:Class="PointOfSale.MenuItemSelectionControl"
+﻿<!--
+    Author: Valeria Morinigo
+    Class: MenuSelectionControl.xaml
+    Purpose: This is the control were we selec the different items on the menu -->
+    
+ <UserControl x:Class="PointOfSale.MenuItemSelectionControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
