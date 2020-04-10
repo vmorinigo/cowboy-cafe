@@ -42,7 +42,7 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             CowboyCoffee cc = (CowboyCoffee)DataContext;
-            switch (((Button)sender).Name)
+            switch (((RadioButton)sender).Name)
             {
                 case "SmallButton":
                     order.subtotalFunc(cc, Size.Small); break;

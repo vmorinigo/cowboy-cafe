@@ -21,6 +21,11 @@ namespace CowboyCafe.Data
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>
+        /// The is the screen associated with the IOrderItem
+        /// </summary>
+        public virtual object Screen { get; set; }
+
+        /// <summary>
         /// Gets the price of the drink
         /// </summary>
         public abstract double Price { get; }

@@ -24,14 +24,14 @@ namespace CowboyCafe.DataTests
             tea.Ice = true;
             Assert.True(tea.Ice);
         }
-
+        /*
         [Fact]
         public void ShouldBeSweetByDefault()
         {
             var tea = new TexasTea();
             Assert.True(tea.Sweet);
         }
-
+        */
         [Fact]
         public void ShouldBeAbleToSetSweetness()
         {

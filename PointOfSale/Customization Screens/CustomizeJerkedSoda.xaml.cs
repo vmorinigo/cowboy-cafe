@@ -45,38 +45,54 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             JerkedSoda js = (JerkedSoda)DataContext;
-            switch (((Button)sender).Name)
+
+            if (sender is Button)
             {
                 //Flavor Cases
-                case "OrangeSodaButton":
-                    js.Flavor = Flavor.OrangeSoda;
-                    break;
-                case "CreamSodaButton":
-                    js.Flavor = Flavor.CreamSoda;
-                    break;
-                case "SarsparillaButton":
-                    js.Flavor = Flavor.Sarsparilla;
-                    break;
-                case "BirchBeerButton":
-                    js.Flavor = Flavor.BirchBeer;
-                    break;
-                case "RootBeerButton":
-                    js.Flavor = Flavor.RootBeer;
-                    break;
-
-                //Size Cases
-                case "SmallButton":
-                    order.subtotalFunc(js, Size.Small);
-                    break;
-                case "MediumButton":
-                    order.subtotalFunc(js, Size.Medium);
-                    break;
-                case "LargeButton":
-                    order.subtotalFunc(js, Size.Large);
-                    break;
-                default:
-                    throw new NotImplementedException("Unknown Jerked Soda Toggle Button Pressed");
+                switch (((Button)sender).Name)
+                {
+                    case "OrangeSodaButton":
+                        js.Flavor = Flavor.OrangeSoda;
+                        break;
+                    case "CreamSodaButton":
+                        js.Flavor = Flavor.CreamSoda;
+                        break;
+                    case "SarsparillaButton":
+                        js.Flavor = Flavor.Sarsparilla;
+                        break;
+                    case "BirchBeerButton":
+                        js.Flavor = Flavor.BirchBeer;
+                        break;
+                    case "RootBeerButton":
+                        js.Flavor = Flavor.RootBeer;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Jerked Soda Toggle Button Pressed");
+                }
             }
+
+            if (sender is RadioButton)
+            {
+                //Size Cases
+                switch (((RadioButton)sender).Name)
+                {
+                    case "SmallButton":
+                        order.subtotalFunc(js, Size.Small);
+                        SmallButton.IsChecked = true;
+                        break;
+                    case "MediumButton":
+                        order.subtotalFunc(js, Size.Medium);
+                        MediumButton.IsChecked = true;
+                        break;
+                    case "LargeButton":
+                        order.subtotalFunc(js, Size.Large);
+                        LargeButton.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Jerked Soda Toggle Button Pressed");
+                }
+            }
+
             order.InvokePropertyChanged();
         }
     }

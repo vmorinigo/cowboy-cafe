@@ -40,6 +40,7 @@ namespace PointOfSale
                 var entree = new TexasTripleBurger();
                 var screen = new CustomizeTexasTripleBurger();
                 screen.DataContext = entree;
+                entree.Screen = screen;
                 order.Add(entree);
                 orderControl.SwapScreen(screen);
             }
@@ -59,6 +60,7 @@ namespace PointOfSale
                 var entree = new DakotaDoubleBurger();
                 var screen = new CustomizeDakotaDoubleBurger();
                 screen.DataContext = entree;
+                entree.Screen = screen;
                 order.Add(entree);
                 orderControl.SwapScreen(screen);
             }
@@ -77,6 +79,7 @@ namespace PointOfSale
                 var entree = new TrailBurger();
                 var screen = new CustomizeTrailBurger();
                 screen.DataContext = entree;
+                entree.Screen = screen;
                 order.Add(entree);
                 orderControl.SwapScreen(screen);
             }
@@ -95,6 +98,7 @@ namespace PointOfSale
                 var entree = new PecosPulledPork();
                 var screen = new CustomizePecosPulledPork();
                 screen.DataContext = entree;
+                entree.Screen = screen;
                 order.Add(entree);
                 orderControl.SwapScreen(screen);
             }
@@ -121,6 +125,7 @@ namespace PointOfSale
                 var entree = new CowpokeChili();
                 var screen = new CustomizeCowpokeChili();
                 screen.DataContext = entree;
+                entree.Screen = screen;
                 order.Add(entree);
                 orderControl.SwapScreen(screen);
             }
@@ -183,6 +188,7 @@ namespace PointOfSale
                     }
                     screen = new CustomizeSide(DataContext);
                     screen.DataContext = item;
+                    item.Screen = screen;
                     order.Add(item);
                     orderControl.SwapScreen(screen);
                 }
@@ -197,6 +203,7 @@ namespace PointOfSale
                 var drink = new JerkedSoda();
                 var screen = new CustomizeJerkedSoda(DataContext);
                 screen.DataContext = drink;
+                drink.Screen = screen;
                 order.Add(drink);
                 orderControl.SwapScreen(screen);
             }
@@ -210,6 +217,7 @@ namespace PointOfSale
                 var drink = new TexasTea();
                 var screen = new CustomizeTexasTea(DataContext);
                 screen.DataContext = drink;
+                drink.Screen = screen;
                 order.Add(drink);
                 orderControl.SwapScreen(screen);
             }
@@ -217,9 +225,15 @@ namespace PointOfSale
 
         private void AddCowboyCafe_Click(object sender, RoutedEventArgs e)
         {
+            orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new CowboyCoffee());
+                var drink = new CowboyCoffee();
+                var screen = new CustomizeCowboyCoffe(DataContext);
+                screen.DataContext = drink;
+                drink.Screen = screen;
+                order.Add(drink);
+                orderControl.SwapScreen(screen);
             }
         }
 
@@ -231,6 +245,7 @@ namespace PointOfSale
                 var drink = new Water();
                 var screen = new CustomizeWater(DataContext);
                 screen.DataContext = drink;
+                drink.Screen = screen;
                 order.Add(drink);
                 orderControl.SwapScreen(screen);
             }

@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -42,6 +43,30 @@ namespace PointOfSale
                 }
 
             }
+        }
+
+        /// <summary>
+        /// A proxy event listener that passes on SelectionChanged events
+        /// </summary>
+        /// <param name="sender">The ListBox that had its selection changed</param>
+        /// <param name="e">The event arguments</param>
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FrameworkElement screen = null;
+            IOrderItem item = (IOrderItem)((ListBox)sender).SelectedItem;
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (item != null)
+            {
+                screen = (FrameworkElement)item.Screen;
+
+            }
+            else
+            {
+                screen = new MenuItemSelectionControl();
+            }
+
+            orderControl?.SwapScreen(screen);
         }
     }
 }

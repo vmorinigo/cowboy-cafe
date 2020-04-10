@@ -12,6 +12,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 using CowboyCafe.Extensions;
+using Size = CowboyCafe.Data.Size;
+using SodaFlavor = CowboyCafe.Data.SodaFlavor;
 
 namespace PointOfSale
 {
@@ -22,9 +24,9 @@ namespace PointOfSale
     {
         public OrderControl()
         {
+            var order = new Order(1);
+            DataContext = order;
             InitializeComponent();
-            Order order = new Order(1);
-            this.DataContext = order;
         }
         /// <summary>
         /// Event handler for the Cancel Order Button
@@ -47,15 +49,17 @@ namespace PointOfSale
             DataContext = new Order(o.OrderNumber + 1);
         }
 
-        public void SwapScreen(UIElement element)
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
+        }
+
+        public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;
 
         }
 
-        private void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {
-            SwapScreen(new MenuItemSelectionControl());
-        }
+
     }
 }

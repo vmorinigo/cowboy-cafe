@@ -54,17 +54,20 @@ namespace PointOfSale
                 s = (BakedBeans)DataContext;
 
 
-            switch (((Button)sender).Name)
+            switch (((RadioButton)sender).Name)
             {
                 //Size Cases
                 case "SmallButton":
                     size = Size.Small;
+                    SmallButton.IsChecked = true;
                     break;
                 case "MediumButton":
                     size = Size.Medium;
+                    MediumButton.IsChecked = true;
                     break;
                 case "LargeButton":
                     size = Size.Large;
+                    LargeButton.IsChecked = true;
                     break;
                 default:
                     throw new NotImplementedException("Unknown Size Button Pressed");

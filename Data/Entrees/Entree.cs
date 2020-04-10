@@ -21,6 +21,11 @@ namespace CowboyCafe.Data
         public abstract double Price { get; }
 
         /// <summary>
+        /// The is the screen associated with the IOrderItem
+        /// </summary>
+        public virtual object Screen { get; set; }
+
+        /// <summary>
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }

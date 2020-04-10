@@ -26,7 +26,7 @@
                 <local:MenuItemSelectionControl Margin="0,0,0,30" />
             </Border>
         </DockPanel>
-        <local:OrderSummaryControl Grid.Column="1" Margin="0,0,0,30"/>
+        <local:OrderSummaryControl Grid.Column="1" Margin="0,0,0,30" />
         
     </Grid>
 </UserControl>

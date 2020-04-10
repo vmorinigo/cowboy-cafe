@@ -32,6 +32,11 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// The is the screen associated with the IOrderItem
+        /// </summary>
+        public virtual object Screen { get; set; }
+
+        /// <summary>
         /// Gets the price of the side
         /// </summary>
         public abstract double Price { get; }

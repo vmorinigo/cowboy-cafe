@@ -109,29 +109,8 @@ namespace CowboyCafe.Data
         }
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Small:
-                    if(Sweet)
-                    {
-                        return "Small Texas Sweet Tea";
-                    }
-                    return "Small Texas Plain Tea";
-                case Size.Medium:
-                    if (Sweet)
-                    {
-                        return "Medium Texas Sweet Tea";
-                    }
-                    return "Medium Texas Plain Tea";
-                case Size.Large:
-                    if (Sweet)
-                    {
-                        return "Large Texas Sweet Tea";
-                    }
-                    return "Large Texas Plain Tea";
-                default:
-                    throw new NotImplementedException();
-            }
+            if (Sweet) return Size.ToString() + " Texas Sweet Tea";
+            return Size.ToString() + " Texas Plain Tea";
         }
     }
 }

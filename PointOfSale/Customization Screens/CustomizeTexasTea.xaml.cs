@@ -43,16 +43,19 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TexasTea tt = (TexasTea)DataContext;
-            switch (((Button)sender).Name)
+            switch (((RadioButton)sender).Name)
             {
                 case "SmallButton":
                     order.subtotalFunc(tt, Size.Small);
+                    SmallButton.IsChecked = true;
                     break;
                 case "MediumButton":
                     order.subtotalFunc(tt, Size.Medium);
+                    MediumButton.IsChecked = true;
                     break;
                 case "LargeButton":
                     order.subtotalFunc(tt, Size.Large);
+                    LargeButton.IsChecked = true;
                     break;
                 default:
                     throw new NotImplementedException("Unknown Texas Tea Toggle Button Pressed");

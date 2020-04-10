@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the coffee is decaf
         /// </summary>
-        private bool decaf = true;
+        private bool decaf = false;
         public bool Decaf
         {
             get { return decaf; }
@@ -99,29 +99,8 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Small:
-                    if(Decaf)
-                    {
-                        return "Small Decaf Cowboy Coffee";
-                    }
-                    return "Small Cowboy Coffee";
-                case Size.Medium:
-                    if (Decaf)
-                    {
-                        return "Medium Decaf Cowboy Coffee";
-                    }
-                    return "Medium Cowboy Coffee";
-                case Size.Large:
-                    if (Decaf)
-                    {
-                        return "Large Decaf Cowboy Coffee";
-                    }
-                    return "Large Cowboy Coffee";
-                default:
-                    throw new NotImplementedException();
-            }
+            if (Decaf) return Size.ToString() + " Decaf Cowboy Coffee";
+            return Size.ToString() + " Cowboy Coffee";
         }
     }
 }

@@ -43,16 +43,19 @@ namespace PointOfSale
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Water w = (Water)DataContext;
-            switch (((Button)sender).Name)
+            switch (((RadioButton)sender).Name)
             {
                 case "SmallButton":
                     order.subtotalFunc(w, Size.Small);
+                    SmallButton.IsChecked = true;
                     break;
                 case "MediumButton":
                     order.subtotalFunc(w, Size.Medium);
+                    MediumButton.IsChecked = true;
                     break;
                 case "LargeButton":
                     order.subtotalFunc(w, Size.Large);
+                    LargeButton.IsChecked = true;
                     break;
                 default:
                     throw new NotImplementedException("Unknown Water Toggle Button Pressed");

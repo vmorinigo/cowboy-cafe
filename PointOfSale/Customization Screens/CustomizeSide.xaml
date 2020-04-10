@@ -13,24 +13,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!--Small-->
-            <Button x:Name="SmallButton" Grid.Row="0" Content="Small" Click="Button_Click" Height="100" Width="200" Margin="0,0,0,50">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
+        <RadioButton x:Name="SmallButton" FontSize="30" Grid.Row="0" Content="Small" Click="Button_Click" Height="100" Width="200" Margin="0,0,0,50"/>
 
-            <!--Medium-->
-            <Button x:Name="MediumButton" Grid.Row="1" Content="Medium" Click="Button_Click" Width="200" Height="100" Margin="0,0,0,51">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
+        <!--Medium-->
+        <RadioButton x:Name="MediumButton" FontSize="30" Grid.Row="1" Content="Medium" Click="Button_Click" Width="200" Height="100" Margin="0,0,0,51"/>
 
-            <!--Large-->
-        <Button x:Name="LargeButton" Grid.Row="2" Content="Large" Click="Button_Click" Width="200" Height="100" Margin="0,0,0,50" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
+        <!--Large-->
+        <RadioButton x:Name="LargeButton" FontSize="30" Grid.Row="2" Content="Large" Click="Button_Click" Width="200" Height="100" Margin="0,0,0,50"/>
     </Grid>
 </UserControl>

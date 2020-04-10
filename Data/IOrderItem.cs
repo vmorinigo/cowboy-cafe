@@ -22,5 +22,10 @@ namespace CowboyCafe.Data
         /// Special Instructions for this order item
         /// </summary>
         List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The is the screen associated with the IOrderItem
+        /// </summary>
+        public object Screen { get; set; }
     }
 }
