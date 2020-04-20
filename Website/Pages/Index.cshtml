@@ -12,8 +12,16 @@
 
 <h2>Menu:</h2>
 <h3>Entree</h3>
-<div class="menu-item">
-    <div class="name"></div>
-    <div class="prices"></div>
-    <div class="calories"></div>
-</div>
+
+<ul class="menu-list">
+    @foreach (IOrderItem item in Menu.CompleteMenu)
+    {
+        <li>
+            <div class="menu-item">
+                <div class="name">@item.ToString()</div>
+                <div class="prices">@item.Price</div>
+                <div class="calories">@item.Calories</div>
+            </div>
+        </li>
+    }
+</ul>
