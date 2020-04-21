@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Valeria Morinigo
+ * Class: Menu
+ * Purpose: A class representing the menu of the cafe
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,10 +30,42 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> s = new List<IOrderItem>();
-            s.Add(new BakedBeans());
-            s.Add(new ChiliCheeseFries());
-            s.Add(new CornDodgers());
-            s.Add(new PanDeCampo());
+            Side bakedbeans = new BakedBeans();
+            Side mbakedbeans = new BakedBeans();
+            Side lbakedbeans = new BakedBeans();
+            Side chilicheesefries = new ChiliCheeseFries();
+            Side mchilicheesefries = new ChiliCheeseFries();
+            Side lchilicheesefries = new ChiliCheeseFries();
+            Side corndog = new CornDodgers();
+            Side mcorndog = new CornDodgers();
+            Side lcorndog = new CornDodgers();
+            Side pan = new PanDeCampo();
+            Side mpan = new PanDeCampo();
+            Side lpan = new PanDeCampo();
+           
+            mbakedbeans.Size = Size.Medium;
+            lbakedbeans.Size = Size.Large;
+            mchilicheesefries.Size= Size.Medium;
+            lchilicheesefries.Size = Size.Large;
+            mcorndog.Size = Size.Medium;
+            lcorndog.Size = Size.Large;
+            mpan.Size = Size.Medium;
+            lpan.Size = Size.Large;
+
+
+            s.Add(bakedbeans);
+            s.Add(mbakedbeans);
+            s.Add(lbakedbeans);
+            s.Add(chilicheesefries);
+            s.Add(mchilicheesefries);
+            s.Add(lchilicheesefries);
+            s.Add(corndog);
+            s.Add(mcorndog);
+            s.Add(lcorndog);
+            s.Add(pan);
+            s.Add(mpan);
+            s.Add(lpan);
+
             return s;
         }
 
