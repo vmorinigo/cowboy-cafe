@@ -11,17 +11,48 @@
 </div>
 
 <h2>Menu:</h2>
-<h3>Entree</h3>
-
-<ul class="menu-list">
-    @foreach (IOrderItem item in Menu.CompleteMenu)
-    {
-        <li>
-            <div class="menu-item">
-                <div class="name">@item.ToString()</div>
-                <div class="prices">@item.Price</div>
-                <div class="calories">@item.Calories</div>
-            </div>
-        </li>
-    }
-</ul>
+<table class="menu-list" style="width:100%">
+    <tr>
+        <th>Entree</th>
+        <th>Sides</th>
+        <th>Drinks</th>
+    </tr>
+    <tr>
+        <td>
+            @foreach (IOrderItem item in Menu.Entrees())
+            {
+                <li class="entrees">
+                    <div class="menu-item">
+                        <div class="name">@item.ToString()</div>
+                        <div class="prices">Price: @item.Price</div>
+                        <div class="calories">Calories: @item.Calories</div>
+                    </div>
+                </li>
+            }
+        </td>
+        <td>
+            @foreach (IOrderItem item in Menu.Sides())
+            {
+                <li class="sides">
+                    <div class="menu-item">
+                        <div class="name">@item.ToString()</div>
+                        <div class="prices">Price: @item.Price</div>
+                        <div class="calories">Calories: @item.Calories</div>
+                    </div>
+                </li>
+            }
+        </td>
+        <td>
+            @foreach (IOrderItem item in Menu.Drinks())
+            {
+                <li class="drinks">
+                    <div class="menu-item">
+                        <div class="name">@item.ToString()</div>
+                        <div class="prices">Price: @item.Price</div>
+                        <div class="calories">Calories: @item.Calories</div>
+                    </div>
+                </li>
+            }
+        </td>
+    </tr>
+</table>

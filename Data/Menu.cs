@@ -33,11 +33,42 @@ namespace CowboyCafe.Data
 
         public static IEnumerable<IOrderItem> Drinks()
         {
+            Drink coffee = new CowboyCoffee();
+            Drink mcoffee = new CowboyCoffee();
+            Drink lcoffee = new CowboyCoffee();
+            Drink soda = new JerkedSoda();
+            Drink msoda = new JerkedSoda();
+            Drink lsoda = new JerkedSoda();
+            Drink tea = new TexasTea();
+            Drink mtea = new TexasTea();
+            Drink ltea = new TexasTea();
+            Drink water = new Water();
+            Drink mwater = new Water();
+            Drink lwater = new Water();
             List<IOrderItem> d = new List<IOrderItem>();
-            d.Add(new CowboyCoffee());
-            d.Add(new JerkedSoda());
-            d.Add(new TexasTea());
-            d.Add(new Water());
+            d.Add(coffee);
+            mcoffee.Size = Size.Medium;
+            d.Add(mcoffee);
+            lcoffee.Size = Size.Large;
+            d.Add(lcoffee);
+
+            d.Add(soda);
+            msoda.Size = Size.Medium;
+            d.Add(msoda);
+            lsoda.Size = Size.Large;
+            d.Add(lsoda);
+
+            d.Add(tea);
+            mtea.Size = Size.Medium;
+            d.Add(mtea);
+            ltea.Size = Size.Large;
+            d.Add(ltea);
+
+            d.Add(water);
+            mwater.Size = Size.Medium;
+            d.Add(mwater);
+            lwater.Size = Size.Large;
+            d.Add(lwater);
             return d;
         }
 
