@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
 {
     public static class Menu
     {
-        public static List<IOrderItem> items = new List<IOrderItem>();
+        //public static List<IOrderItem> items = new List<IOrderItem>();
 
         public static IEnumerable<IOrderItem> Entrees()
         {
