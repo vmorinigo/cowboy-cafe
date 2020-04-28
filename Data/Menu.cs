@@ -179,7 +179,7 @@ namespace CowboyCafe.Data
             }
             return results;
         }
-        /*
+        
         /// <summary>
         /// Filters 
         /// </summary>
@@ -192,12 +192,28 @@ namespace CowboyCafe.Data
             if (types == null || types.Count() == 0) return CompleteMenu();
             // Filter the supplied collection of movies
             List<IOrderItem> results = new List<IOrderItem>();
-            foreach (IOrderItem item in CompleteMenu())
+            switch(types.ToString())
             {
-                if (item.GetType().ToString() != null && types.Contains(item.GetType().ToString()))
-                {
-                    results.Add(item);
-                }
+                case "Entrees":
+                    foreach (IOrderItem item in Entrees())
+                    {
+                        results.Add(item);
+                    }
+                    break;
+                case "Sides":
+                    foreach (IOrderItem item in Sides())
+                    {
+                        results.Add(item);
+                    }
+                    break;
+                case "Drinks":
+                    foreach (IOrderItem item in Drinks())
+                    {
+                        results.Add(item);
+                    }
+                    break;
+                default:
+                    break;
             }
             return results;
         }
@@ -217,7 +233,15 @@ namespace CowboyCafe.Data
             // only a maximum specified
             if (min == null)
             {
-                foreach (IOrderItem item in CompleteMenu())
+                foreach (IOrderItem item in Entrees())
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                foreach (IOrderItem item in Sides())
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                foreach (IOrderItem item in Drinks())
                 {
                     if (item.Price <= max) results.Add(item);
                 }
@@ -227,7 +251,15 @@ namespace CowboyCafe.Data
             // only a minimum specified 
             if (max == null)
             {
-                foreach (IOrderItem item in CompleteMenu())
+                foreach (IOrderItem item in Entrees())
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                foreach (IOrderItem item in Sides())
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                foreach (IOrderItem item in Drinks())
                 {
                     if (item.Price >= min) results.Add(item);
                 }
@@ -235,7 +267,21 @@ namespace CowboyCafe.Data
             }
 
             // Both minimum and maximum specified
-            foreach (IOrderItem item in CompleteMenu())
+            foreach (IOrderItem item in Entrees())
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Sides())
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Drinks())
             {
                 if (item.Price >= min && item.Price <= max)
                 {
@@ -260,17 +306,34 @@ namespace CowboyCafe.Data
             // only a maximum specified
             if (min == null)
             {
-                foreach (IOrderItem item in CompleteMenu())
+                foreach (IOrderItem item in Entrees())
                 {
                     if (item.Calories <= max) results.Add(item);
                 }
+                foreach (IOrderItem item in Sides())
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                foreach (IOrderItem item in Drinks())
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+
                 return results;
             }
 
             // only a minimum specified 
             if (max == null)
             {
-                foreach (IOrderItem item in CompleteMenu())
+                foreach (IOrderItem item in Entrees())
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                foreach (IOrderItem item in Sides())
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                foreach (IOrderItem item in Drinks())
                 {
                     if (item.Calories >= min) results.Add(item);
                 }
@@ -278,7 +341,21 @@ namespace CowboyCafe.Data
             }
 
             // Both minimum and maximum specified
-            foreach (IOrderItem item in CompleteMenu())
+            foreach (IOrderItem item in Entrees())
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Sides())
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Drinks())
             {
                 if (item.Calories >= min && item.Calories <= max)
                 {
@@ -286,6 +363,6 @@ namespace CowboyCafe.Data
                 }
             }
             return results;
-        }*/
+        }
     }
 }

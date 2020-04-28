@@ -59,9 +59,9 @@ namespace Website.Pages
             SearchTerms = Request.Query["SearchTerms"];
             Types = Request.Query["Types"];
             Items = Menu.Search(SearchTerms);
-            /*Items = Menu.FilterByType(Items, Types);
+            Items = Menu.FilterByType(Items, Types);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
-            Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);*/
+            Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
         }
     }
 }
