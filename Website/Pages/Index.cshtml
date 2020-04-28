@@ -11,16 +11,48 @@
     <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
 </div>
 
-<h2>Menu:</h2>
-<table class="menu-list" style="width:100%">
-    <tr>
-        <th>Entree</th>
-        <th>Sides</th>
-        <th>Drinks</th>
-    </tr>
-    <tr>
-        <td>
-            @foreach (IOrderItem item in Menu.Entrees())
+
+<form id="menu-search">
+
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search">
+    </div>
+
+    <div id="filters">
+
+        <h4>Type of Order</h4>
+        @foreach (String type in Menu.Types)
+        {
+            <label>
+                <input type="checkbox" name="Types" value="@type" checked="@Model.Types?.Contains(type)" />
+                @type
+            </label>
+        }
+
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
+            and
+            <input name="PriceMax" type="number" min="0" max="100" step="0.1" placeholder="max" />
+        </div>
+
+        <h4>Calories</h4>
+        <div>
+            Between
+            <input name="CaloriesMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
+            and
+            <input name="CaloriesMax" type="number" min="0" max="100" step="0.1" placeholder="max" />
+        </div>
+
+    </div>
+
+    <div id="results">
+        <h1>Menu: </h1>
+
+        <ul class="menu-list">
+            @foreach (IOrderItem item in @Model.Items)
             {
                 <li class="entrees">
                     <div class="menu-item">
@@ -30,30 +62,6 @@
                     </div>
                 </li>
             }
-        </td>
-        <td>
-            @foreach (IOrderItem item in Menu.Sides())
-            {
-                <li class="sides">
-                    <div class="menu-item">
-                        <div class="name">@item.ToString()</div>
-                        <div class="prices">Price: @item.Price</div>
-                        <div class="calories">Calories: @item.Calories</div>
-                    </div>
-                </li>
-            }
-        </td>
-        <td>
-            @foreach (IOrderItem item in Menu.Drinks())
-            {
-                <li class="drinks">
-                    <div class="menu-item">
-                        <div class="name">@item.ToString()</div>
-                        <div class="prices">Price: @item.Price</div>
-                        <div class="calories">Calories: @item.Calories</div>
-                    </div>
-                </li>
-            }
-        </td>
-    </tr>
-</table>
+        </ul>
+    </div>
+</form>

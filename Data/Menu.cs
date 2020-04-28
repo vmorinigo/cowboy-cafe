@@ -6,13 +6,14 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     public static class Menu
     {
-        //public static List<IOrderItem> items = new List<IOrderItem>();
+        //private static List<IOrderItem> items = new List<IOrderItem>();
 
         public static IEnumerable<IOrderItem> Entrees()
         {
@@ -131,5 +132,160 @@ namespace CowboyCafe.Data
             return m;
         }
 
+        /// <summary>
+        /// Gets the possible types of order
+        /// </summary>
+        public static string[] Types
+        {
+            get => new string[]
+            {
+            "Entrees",
+            "Sides",
+            "Drinks"
+            };
+        }
+
+        /// <summary>
+        /// Searches the database for matching menu items
+        /// </summary>
+        /// <param name="terms">The terms to search for</param>
+        /// <returns>A collection of items</returns>
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+            // Return all movies if there are no search terms
+            if (terms == null) return CompleteMenu();
+            // return each movie in the database containing the terms substring
+            foreach (IOrderItem item in Entrees())
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Sides())
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+            foreach (IOrderItem item in Drinks())
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+        /*
+        /// <summary>
+        /// Filters 
+        /// </summary>
+        /// <param name="items">The menu items</param>
+        /// <param name="types">The type of order</param>
+        /// <returns>A collection containing only movies that match the filter</returns>
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, IEnumerable<string> types)
+        {
+            // If no filter is specified, just return the provided collection
+            if (types == null || types.Count() == 0) return CompleteMenu();
+            // Filter the supplied collection of movies
+            List<IOrderItem> results = new List<IOrderItem>();
+            foreach (IOrderItem item in CompleteMenu())
+            {
+                if (item.GetType().ToString() != null && types.Contains(item.GetType().ToString()))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the provided collection of movies
+        /// </summary>
+        /// <param name="items">The collection of movies to filter</param>
+        /// <param name="min">Minimum number for range of rating</param>
+        /// <param name="max">Maximum number for range of rating</param>
+        /// <returns>A collection containing only movies that match the filter</returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return CompleteMenu();
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in CompleteMenu())
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (IOrderItem item in CompleteMenu())
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in CompleteMenu())
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the provided collection of movies
+        /// </summary>
+        /// <param name="items">The collection of movies to filter</param>
+        /// <param name="min">Minimum number for range of rating</param>
+        /// <param name="max">Maximum number for range of rating</param>
+        /// <returns>A collection containing only movies that match the filter</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return CompleteMenu();
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in CompleteMenu())
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (IOrderItem item in CompleteMenu())
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in CompleteMenu())
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }*/
     }
 }
