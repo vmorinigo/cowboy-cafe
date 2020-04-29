@@ -98,7 +98,7 @@ namespace CowboyCafe.Data
         /// </summary>
         /// <param name="items">The menu items</param>
         /// <param name="types">The type of order</param>
-        /// <returns>A collection containing only movies that match the filter</returns>
+        /// <returns>A collection containing only items that match the filter</returns>
         public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, IEnumerable<string> types)
         {
             // If no filter is specified, just return the provided collection
@@ -124,12 +124,12 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Filters the provided collection of movies
+        /// Filters the provided collection of items
         /// </summary>
-        /// <param name="items">The collection of movies to filter</param>
-        /// <param name="min">Minimum number for range of rating</param>
-        /// <param name="max">Maximum number for range of rating</param>
-        /// <returns>A collection containing only movies that match the filter</returns>
+        /// <param name="items">The collection of items to filter</param>
+        /// <param name="min">Minimum number for range of price</param>
+        /// <param name="max">Maximum number for range of price</param>
+        /// <returns>A collection containing only items that match the filter</returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
             if (min == null && max == null) return items;
@@ -167,12 +167,12 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Filters the provided collection of movies
+        /// Filters the provided collection of items
         /// </summary>
-        /// <param name="items">The collection of movies to filter</param>
-        /// <param name="min">Minimum number for range of rating</param>
-        /// <param name="max">Maximum number for range of rating</param>
-        /// <returns>A collection containing only movies that match the filter</returns>
+        /// <param name="items">The collection of items to filter</param>
+        /// <param name="min">Minimum number for range of calories</param>
+        /// <param name="max">Maximum number for range of caories</param>
+        /// <returns>A collection containing only items that match the filter</returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
         {
             if (min == null && max == null) return items;

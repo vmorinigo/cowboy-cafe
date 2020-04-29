@@ -48,20 +48,44 @@
 
     </div>
 
-    <div id="results">
+    <div id="results" class="results">
         <h1>Menu: </h1>
-
-        <ul class="menu-list">
+        <div class="menu-list">
             @foreach (IOrderItem item in @Model.Items)
             {
-                <li class="entrees">
+                @if (item is Entree)
+                {
+                    <div class="entrees"> Entrees </div>
                     <div class="menu-item">
                         <div class="name">@item.ToString()</div>
                         <div class="prices">Price: @item.Price</div>
                         <div class="calories">Calories: @item.Calories</div>
                     </div>
-                </li>
+                }
+
+                @if (item is Side)
+                {
+                    <div class="sides"> Sides </div>
+                        <div class="menu-item">
+                            <div class="name">@item.ToString()</div>
+                            <div class="prices">Price: @item.Price</div>
+                            <div class="calories">Calories: @item.Calories</div>
+                        </div>
+                }
+
+                @if (item is Drink)
+                {
+                    <div class="drinks"> Drinks </div>
+                        <div class="menu-item">
+                            <div class="name">@item.ToString()</div>
+                            <div class="prices">Price: @item.Price</div>
+                            <div class="calories">Calories: @item.Calories</div>
+                        </div>
+                }
             }
-        </ul>
+
+
+        </div>
     </div>
+
 </form>
