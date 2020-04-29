@@ -88,7 +88,7 @@ ul.menu-list {
 
 #menu-search {
     display: grid;
-    grid-template: "head head" 30px "nav  main" auto / 120px 1fr;
+    grid-template: "head head" 30px "nav  main" auto / 200px 1fr;
 }
 
 #search {

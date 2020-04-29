@@ -18,11 +18,12 @@ namespace Website.Pages
         /// <summary>
         /// Gets and sets the search terms
         /// </summary>
-        public string SearchTerms { get; set; }
+        public string SearchTerms { get; set; } = " ";
 
         /// <summary>
         /// Gets and sets the Types filters
         /// </summary>
+        [BindProperty]
         public string[] Types { get; set; }
 
 
@@ -34,28 +35,28 @@ namespace Website.Pages
         /// <summary>
         /// Gets and sets the Price maximum rating
         /// </summary>
+        [BindProperty]
         public double? PriceMax { get; set; }
 
         /// <summary>
         /// Gets and sets the Calories maximum rating
         /// </summary>
-        public double? CaloriesMax { get; set; }
+        public uint? CaloriesMax { get; set; }
 
         /// <summary>
         /// Gets and sets the Calories minimium rating
         /// </summary>
-        public double? CaloriesMin { get; set; }
+        public uint? CaloriesMin { get; set; }
 
         /// <summary>
         /// Does the response initialization for incoming GET requests
         /// </summary>
-        public void OnGet(double? PriceMax, double? PriceMin, double? CaloriesMax, double? CaloriesMin)
+        public void OnGet(double? PriceMin, double? PriceMax, uint? CaloriesMin, uint? CaloriesMax)
         {
-            // Nullable conversion workaround
-            this.PriceMax = PriceMax;
             this.PriceMin = PriceMin;
-            this.CaloriesMax = CaloriesMax;
+            this.PriceMax = PriceMax;
             this.CaloriesMin = CaloriesMin;
+            this.CaloriesMax = CaloriesMax;
             SearchTerms = Request.Query["SearchTerms"];
             Types = Request.Query["Types"];
             Items = Menu.Search(SearchTerms);
